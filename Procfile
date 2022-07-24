@@ -1,1 +1,1 @@
-web:gunicorn flask_fish_analysis:app --log-file-
+web: python flask_fish_analysis.py
