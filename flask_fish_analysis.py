@@ -19,7 +19,7 @@ port = int(os.environ.get("PORT", 8000))
 
 @app.route('/')
 def index():
-    return render_template(r'new.html')
+    return render_template('new.html')
 
 @app.route('/pred', methods=['POST'])
 def pred():
@@ -34,7 +34,7 @@ def pred():
     Species={1:'Bream',2:'Roach',3:'Whitefish', 4:'Parkki',5:'Perch',6:'Pike',7:'Smelt'}
     prediction=Species.get(predictedvalue[0])
     print(prediction)
-    return render_template(r'new.html', prediction_text='The predicted fish Species is: {}'.format(prediction))
+    return render_template('new.html', prediction_text='The predicted fish Species is: {}'.format(prediction))
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',debug=True,port=port)
